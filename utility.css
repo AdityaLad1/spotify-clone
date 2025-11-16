@@ -1,0 +1,29 @@
+.bg-black{
+    background-color: black;
+    color: white;
+}
+
+.border{
+    border: 2px solid red;
+}
+
+.flexbox{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+.bg-container{
+    background-color: #121212;
+}
+.bg-box{
+    background-color: #1f1f1f;
+}
+
+.white-button{
+    color: #2e2e2e;
+    background-color: white;
+    padding: 5px;
+    border-radius: 15px;
+font-weight: bold;
+}

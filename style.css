@@ -1,0 +1,182 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+nav {
+  height: 7vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.rightNav {
+  display: flex;
+  /* height: 5vh; */
+  align-items: center;
+  justify-content: flex-start;
+  width: 26vw;
+  /* background-color: red; */
+  gap: 42px;
+  margin-left: 18px;
+}
+
+.leftNav {
+  display: flex;
+  gap: 10px;
+}
+
+.search {
+  background-color: #1f1f1f;
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  border: 2px solid red;
+}
+.search input {
+  background-color: #1f1f1f;
+}
+.line {
+  font-weight: bolder;
+}
+
+.container {
+  display: flex;
+  height: 83vh;
+}
+
+.rightContainer {
+  width: 20vw;
+  /* height: 80vh; */
+}
+.rightContainer .library {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* gap: 5px; */
+  padding: 13px;
+}
+section {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 12px;
+  margin: 10px;
+  padding: 10px;
+
+  border-radius: 7px;
+  /* border: 2px solid red; */
+}
+.rightFooter {
+  margin-top: 22vh;
+  padding: 13px;
+}
+/* Container spacing */
+div[aria-label="Legal and privacy links"] {
+  margin-bottom: 25px;
+  font-family: Arial, sans-serif;
+}
+
+/* Remove dots */
+div[aria-label="Legal and privacy links"] ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+/* Links */
+div[aria-label="Legal and privacy links"] a {
+  text-decoration: none;
+  color: #b3b3b3;
+  font-size: 14px;
+}
+
+div[aria-label="Legal and privacy links"] a:hover {
+  color: #fff;
+  text-decoration: underline;
+}
+
+/* Language button */
+div button {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+
+  background: none;
+  border: 1px solid #727272;
+  padding: 8px 14px;
+  border-radius: 50px;
+  color: #fff;
+  cursor: pointer;
+
+  font-size: 14px;
+  font-family: Arial, sans-serif;
+}
+
+div button:hover {
+  border-color: #fff;
+}
+
+/* SVG coloring */
+div button svg {
+  fill: currentColor;
+}
+
+.leftContainer {
+  width: 80vw;
+  /* height: 80vh; */
+}
+.trendingSongsHeader {
+  display: flex;
+  width: 77vw;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+}
+
+.trendingGridCards {
+  display: grid;
+  grid-auto-flow: column;     /* Force items in a single row */
+  grid-auto-columns: 1fr;     /* Each item same width */
+  /* gap: 10px;                  Optional spacing */
+}
+
+
+
+.cardTrending {
+  width: 200px;
+  border: 2px solid red;
+  object-fit: contain;
+  margin: 10px;
+  padding: 10px;
+  background-color: #151515;
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+}
+.cardTrending > img {
+  height: 100%;
+  width: 100%;
+  border-radius: 10px;
+}
+.link {
+  text-decoration: none;
+  color: white;
+}
+
+.mainFooter {
+  position: fixed;
+  border: 2px solid red;
+  background-color: #833b3b;
+  height: 9vh;
+  /* top: 100px; */
+  bottom: 2px;
+  width: 100vw;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  gap: 50vw;
+}
