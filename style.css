@@ -2,6 +2,9 @@
   margin: 0;
   padding: 0;
 }
+body{
+  background-color: black;
+}
 nav {
   height: 7vh;
   display: flex;
@@ -29,7 +32,7 @@ nav {
   display: flex;
   justify-content: center;
   align-items: start;
-  border: 2px solid red;
+  /* border: 2px solid red; */
 }
 .search input {
   background-color: #1f1f1f;
@@ -40,11 +43,14 @@ nav {
 
 .container {
   display: flex;
-  height: 83vh;
+  height: 90vh;
 }
 
 .rightContainer {
   width: 20vw;
+  margin: 10px;
+    border-radius: 7px;
+
   /* height: 80vh; */
 }
 .rightContainer .library {
@@ -127,6 +133,8 @@ div button svg {
 
 .leftContainer {
   width: 80vw;
+  margin: 10px;
+  border-radius: 7px;
   /* height: 80vh; */
 }
 .trendingSongsHeader {
@@ -162,7 +170,7 @@ div button svg {
 
 .cardTrending {
   width: 200px;
-  border: 2px solid red;
+  /* border: 2px solid red; */
   object-fit: contain;
   margin: 10px;
   padding: 10px;
@@ -183,7 +191,7 @@ div button svg {
 
 .mainFooter {
   position: fixed;
-  border: 2px solid red;
+  /* border: 2px solid red; */
   background-color: #833b3b;
   height: 9vh;
   /* top: 100px; */
