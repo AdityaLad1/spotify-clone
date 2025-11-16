@@ -139,12 +139,26 @@ div button svg {
 
 .trendingGridCards {
   display: grid;
-  grid-auto-flow: column;     /* Force items in a single row */
-  grid-auto-columns: 1fr;     /* Each item same width */
+  grid-auto-flow: column; /* Force items in a single row */
+  grid-auto-columns: 1fr; /* Each item same width */
   /* gap: 10px;                  Optional spacing */
 }
 
-
+.entireCard {
+  position: relative;
+}
+.entireCard > img {
+  position: absolute;
+  top: 164px;
+  left: 157px;
+  opacity: 0;
+  transform: translateY(20px); /* slight downward offset */
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+.entireCard:hover > img {
+  opacity: 1;
+  transform: translateY(0);
+}
 
 .cardTrending {
   width: 200px;
