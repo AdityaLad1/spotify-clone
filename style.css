@@ -48,8 +48,9 @@ nav {
 
 .rightContainer {
   width: 20vw;
-  margin: 10px;
+  margin: 3px;
     border-radius: 7px;
+    position: relative;
 
   /* height: 80vh; */
 }
@@ -73,8 +74,10 @@ section {
   /* border: 2px solid red; */
 }
 .rightFooter {
-  margin-top: 22vh;
-  padding: 13px;
+  position: absolute;
+  bottom: 5px;
+  /* margin-top: 22vh; */
+  /* padding: 13px; */
 }
 /* Container spacing */
 div[aria-label="Legal and privacy links"] {
@@ -133,8 +136,9 @@ div button svg {
 
 .leftContainer {
   width: 80vw;
-  margin: 10px;
+  margin: 3px;
   border-radius: 7px;
+  position: relative;
   /* height: 80vh; */
 }
 .trendingSongsHeader {
@@ -189,16 +193,16 @@ div button svg {
   color: white;
 }
 
-.mainFooter {
-  position: fixed;
-  /* border: 2px solid red; */
-  background-color: #833b3b;
-  height: 9vh;
-  /* top: 100px; */
-  bottom: 2px;
-  width: 100vw;
+.playButton{
   display: flex;
-  justify-content: space-around;
-  align-items: center;
-  gap: 50vw;
+  justify-content: center;
+  margin: 10px;
+  padding: 10px;
+  border-radius: 15px;
+  position: absolute;
+  bottom: 0px;
+  width: 97%;
+  background-color: rgb(61, 184, 61);
 }
+
+
