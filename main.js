@@ -30,15 +30,17 @@ const main = async () => {
                 <img class="invert" src="./images/music.svg" alt="Music icon">
                 <div class="info">
 
-                  <div>${song.replaceAll("-", " ").replaceAll(".mp3", " ")}</div>
+                  <div>${song
+                    .replaceAll("-", " ")
+                    .replaceAll(".mp3", "")
+                    .replaceAll("%20", "")
+                    .replaceAll("Copy", "")}</div>
                   <div>Anonymous</div>
                 </div>
                 <div class="playNow">
                   <span>Play Now</span>
                   <img class="invert" src="./images/playSong.svg" alt="Play Button">
                 </div>
-
-
               </li>`;
   }
   //   var audio = new Audio(allSongs[0]);
