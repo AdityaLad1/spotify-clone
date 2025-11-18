@@ -23,3 +23,7 @@
   border-radius: 15px;
   font-weight: bold;
 }
+
+.invert{
+  filter: invert(1);
+}
