@@ -223,38 +223,33 @@ div button svg {
   text-decoration: none;
   color: white;
 }
-
-.playButton{
-  /* display: flex;
-  justify-content: center;
-  margin: 10px;
-  padding: 10px;
-  border-radius: 15px;
-  position: absolute;
-  bottom: 0px;
-  width: 97%;
-  background-color: #1db954; */
-  display: flex;
-    justify-content: center;
-    margin: 10px;
-    padding: 10px;
-    border-radius: 15px;
-    position: absolute;
+.playbar{
+   position: absolute;
     bottom: 0px;
     width: 97%;
     background-color: #1db954;
-    flex-direction: row;
-    flex-wrap: wrap;
-    align-items: center;
-    align-content: center;
+    padding: 10px;
+    border-radius: 15px;
+}
+
+.playButton{
+   display: flex;
+    justify-content: center;
+    
 }
 
 .seekbar{
-  width: 100%;
+  position: absolute;
+  width: 98%;
+
+  /* left: 27px; */
   height: 2px;
-  border: 2px solid red;
-  margin: 3px 0px;
+  /* border: 2px solid red; */
+  background-color: #ffffff;
+  margin: 2px 0px;
   border-radius: 100px;
+  bottom: 5px;
+
 
 }
 .circle{
@@ -263,9 +258,19 @@ div button svg {
     width: 14px;
     border-radius: 50px;
     position: absolute;
-    bottom: 8px;
-    left: 5px;
+    bottom: -5px;
+    left: 0%;
+    transition: left 0.5s;
+
     
 }
+.playButton img{
+  cursor: pointer;
+}
 
+.aboveBar{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 
