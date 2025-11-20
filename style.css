@@ -2,7 +2,7 @@
   margin: 0;
   padding: 0;
 }
-body{
+body {
   background-color: black;
 }
 nav {
@@ -49,8 +49,8 @@ nav {
 .rightContainer {
   width: 20vw;
   margin: 3px;
-    border-radius: 7px;
-    position: relative;
+  border-radius: 7px;
+  position: relative;
 
   /* height: 80vh; */
 }
@@ -74,35 +74,33 @@ nav {
   /* border: 2px solid red; 
 } */
 
-.songsList{
-      padding: 5px;
-    height: 400px;
-    overflow: auto;
-
+.songsList {
+  padding: 5px;
+  height: 400px;
+  overflow: auto;
 }
-.songsList ul li{
-    display: flex;
-    /* gap: 17px; */
-    list-style-type: decimal;
-    /* padding: 3px; */
-    text-transform: capitalize;
-    justify-content: space-between;
-    padding: 7px 0px;
-    border: 1px solid white;
-    margin: 8px 0px;
-    border-radius: 7px;
-    font-size: 12px;
-    align-items: center;
-}
-.playNow{
+.songsList ul li {
   display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 3px;
-
+  /* gap: 17px; */
+  list-style-type: decimal;
+  /* padding: 3px; */
+  text-transform: capitalize;
+  justify-content: space-between;
+  padding: 7px 0px;
+  border: 1px solid white;
+  margin: 8px 0px;
+  border-radius: 7px;
+  font-size: 12px;
+  align-items: center;
 }
-.playNow span{
-      width: 50px;
+.playNow {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 3px;
+}
+.playNow span {
+  width: 50px;
 }
 .rightFooter {
   position: absolute;
@@ -223,54 +221,46 @@ div button svg {
   text-decoration: none;
   color: white;
 }
-.playbar{
-   position: absolute;
-    bottom: 0px;
-    width: 97%;
-    background-color: #1db954;
-    padding: 10px;
-    border-radius: 15px;
+.playbar {
+  position: absolute;
+  bottom: 0px;
+  width: 97%;
+  background-color: #1db954;
+  padding: 10px;
+  border-radius: 15px;
 }
 
-.playButton{
-   display: flex;
-    justify-content: center;
-    
+.playButton {
+  display: flex;
+  justify-content: center;
 }
 
-.seekbar{
+.seekbar {
   position: absolute;
   width: 98%;
-
-  /* left: 27px; */
-  height: 2px;
-  /* border: 2px solid red; */
-  background-color: #ffffff;
+  height: 4px;
+  background-color: #ffffffb8;
   margin: 2px 0px;
   border-radius: 100px;
   bottom: 5px;
-
-
+  cursor: pointer;
 }
-.circle{
+.circle {
   background-color: rgb(255, 255, 255);
-    height: 14px;
-    width: 14px;
-    border-radius: 50px;
-    position: absolute;
-    bottom: -5px;
-    left: 0%;
-    transition: left 0.5s;
-
-    
+  height: 14px;
+  width: 14px;
+  border-radius: 50px;
+  position: absolute;
+  bottom: -5px;
+  left: 0%;
+  transition: left 0.5s;
 }
-.playButton img{
+.playButton img {
   cursor: pointer;
 }
 
-.aboveBar{
+.aboveBar {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
-

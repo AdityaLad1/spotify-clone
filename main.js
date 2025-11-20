@@ -31,12 +31,17 @@ const getSongs = async () => {
   return songs;
 };
 
-const playMusic = async (track) => {
+const playMusic = async (track,pause = false) => {
   // var audio = new Audio("/songs/"+track);
   currentSong.src="/songs/"+track
     // audio.play();
-    currentSong.play()
-    play.src="./images/pause.svg"
+    if(!pause){
+      currentSong.play()
+      // play.src="./images/playSong.svg"
+      play.src="./images/pause.svg"
+
+
+    }
     document.querySelector(".songinfo").innerHTML=track.replaceAll("-", " ")
       .replaceAll(".mp3", "")
       .replaceAll("%20", " ")
@@ -47,6 +52,7 @@ const playMusic = async (track) => {
 
 const main = async () => {
   let songs = await getSongs();
+  playMusic(songs[0],true)
   // console.log(songs);
   let songUL = document
     .querySelector(".songsList")
@@ -111,6 +117,12 @@ currentSong.addEventListener("timeupdate",()=>{
 })
 
 // document.querySelector(".seekBar")
+
+document.querySelector(".seekbar").addEventListener("click",e=>{
+  // console.log()
+    document.querySelector(".circle").style.left = (e.offsetX/e.target.getBoundingClientRect().width)*100+"%"
+    currentSong.currentTime= ((currentSong.duration)*(e.offsetX/e.target.getBoundingClientRect().width)*100)/100
+})
 
 
 };
