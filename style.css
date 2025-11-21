@@ -61,6 +61,9 @@ nav {
   /* gap: 5px; */
   padding: 13px;
 }
+.close{
+  display: none;
+}
 /* section {
   display: flex;
   flex-direction: column;
@@ -103,7 +106,7 @@ nav {
   width: 50px;
 }
 .rightFooter {
-  position: absolute;
+  position:absolute;
   bottom: 5px;
   /* margin-top: 22vh; */
   /* padding: 13px; */
@@ -116,7 +119,7 @@ div[aria-label="Legal and privacy links"] {
 
 /* Remove dots */
 div[aria-label="Legal and privacy links"] ul {
-  list-style: none;
+ list-style: none;
   padding: 0;
   margin: 0;
 
@@ -179,10 +182,11 @@ div button svg {
 }
 
 .trendingGridCards {
-  display: grid;
-  grid-auto-flow: column; /* Force items in a single row */
-  grid-auto-columns: 1fr; /* Each item same width */
-  /* gap: 10px;                  Optional spacing */
+
+ display: flex;
+    justify-content: flex-start;
+    gap: 10px;
+    flex-wrap: wrap;
 }
 .trend {
   display: flex;
@@ -229,9 +233,12 @@ div button svg {
   color: white;
 }
 .playbar {
-  position: absolute;
+  /* position: absolute;
   bottom: 0px;
-  width: 97%;
+  width: 97%; */
+  position: fixed;
+      bottom: 18px;
+  width: 75%;
   background-color: #1db954;
   padding: 10px;
   border-radius: 15px;
@@ -280,6 +287,13 @@ div button svg {
     z-index: 1;
     width: 233px;
   }
+  .close{
+    display: block;
+    filter: invert(1);
+  }
+  .rightFooter{
+display: none;
+  }
   .leftContainer {
     position: absolute;
     left: -100%;
@@ -295,6 +309,17 @@ div button svg {
     width: 100vw;
   }
   .playbar {
-    width: 98vw;
+           width: 95.5%;
+  }
+}
+@media (max-height:700px){
+  .rightFooter{
+    display: none;
+  }
+}
+
+@media(max-width  :480px){
+  .cardTrending{
+    width: 100%;
   }
 }

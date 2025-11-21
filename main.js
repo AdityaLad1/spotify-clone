@@ -124,6 +124,14 @@ document.querySelector(".seekbar").addEventListener("click",e=>{
     currentSong.currentTime= ((currentSong.duration)*(e.offsetX/e.target.getBoundingClientRect().width)*100)/100
 })
 
+document.querySelector(".hamburger").addEventListener("click",()=>{
+  document.querySelector(".leftContainer").style.left = "0";
+})
+
+document.querySelector(".close").addEventListener("click",()=>{
+  document.querySelector(".leftContainer").style.left = "-100%";
+})
+
 
 };
 main();
