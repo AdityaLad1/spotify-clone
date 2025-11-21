@@ -11,7 +11,7 @@ nav {
   justify-content: space-between;
   align-items: center;
 }
-.rightNav {
+.leftNav {
   display: flex;
   /* height: 5vh; */
   align-items: center;
@@ -22,7 +22,7 @@ nav {
   margin-left: 18px;
 }
 
-.leftNav {
+.rightNav {
   display: flex;
   gap: 10px;
 }
@@ -46,7 +46,7 @@ nav {
   height: 90vh;
 }
 
-.rightContainer {
+.leftContainer {
   width: 20vw;
   margin: 3px;
   border-radius: 7px;
@@ -54,7 +54,7 @@ nav {
 
   /* height: 80vh; */
 }
-.rightContainer .library {
+.leftContainer .library {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -76,7 +76,7 @@ nav {
 
 .songsList {
   padding: 5px;
-  height: 400px;
+  height: 407px;
   overflow: auto;
 }
 .songsList ul li {
@@ -163,7 +163,7 @@ div button svg {
   fill: currentColor;
 }
 
-.leftContainer {
+.rightContainer {
   width: 80vw;
   margin: 3px;
   border-radius: 7px;
@@ -172,7 +172,7 @@ div button svg {
 }
 .trendingSongsHeader {
   display: flex;
-  width: 77vw;
+  width: 98%;
   justify-content: space-between;
   align-items: center;
   padding: 10px;
@@ -183,6 +183,13 @@ div button svg {
   grid-auto-flow: column; /* Force items in a single row */
   grid-auto-columns: 1fr; /* Each item same width */
   /* gap: 10px;                  Optional spacing */
+}
+.trend {
+  display: flex;
+}
+
+.trend img {
+  display: none;
 }
 
 .entireCard {
@@ -263,4 +270,31 @@ div button svg {
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+@media (max-width: 1400px) {
+  .rightNav {
+    position: absolute;
+    left: -100%;
+    transition: all 0.3s;
+    z-index: 1;
+    width: 233px;
+  }
+  .leftContainer {
+    position: absolute;
+    left: -100%;
+    transition: all 0.3s;
+    z-index: 1;
+    width: 233px;
+  }
+
+  .trend img {
+    display: block;
+  }
+  .rightContainer {
+    width: 100vw;
+  }
+  .playbar {
+    width: 98vw;
+  }
 }
