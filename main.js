@@ -2,6 +2,7 @@ console.log("Lets write JS");
 let currentSong = new Audio()
 
 let songs;
+let currFolder;
 function formatTime(seconds) {
   if (isNaN(seconds) || seconds < 0) return "00:00";
 
@@ -16,8 +17,9 @@ function formatTime(seconds) {
 }
 
 
-const getSongs = async () => {
-  let a = await fetch("http://127.0.0.1:3000/songs/");
+const getSongs = async (folder) => {
+  currFolder = folder;
+  let a = await fetch(`http://127.0.0.1:3000/${currFolder}/`);
   const response = await a.text();
   // console.log(response)
   let div = document.createElement("div");
@@ -27,7 +29,7 @@ const getSongs = async () => {
   for (let i = 0; i < as.length; i++) {
     const element = as[i];
     if (element.href.endsWith(".mp3")) {
-      songs.push(element.href.split("%5Csongs%5C")[1]);
+      songs.push(element.href.split("%5Csongs%5C")[1].split("mcs%5C")[1]);
     }
   }
   return songs;
@@ -35,7 +37,8 @@ const getSongs = async () => {
 
 const playMusic = async (track,pause = false) => {
   // var audio = new Audio("/songs/"+track);
-  currentSong.src="/songs/"+track
+  // currentSong.src="/songs/"+track
+  currentSong.src=`/${currFolder}/`+track
     // audio.play();
     if(!pause){
       currentSong.play()
@@ -53,7 +56,7 @@ const playMusic = async (track,pause = false) => {
 }
 
 const main = async () => {
-  songs = await getSongs();
+  songs = await getSongs("songs/mcs");
   playMusic(songs[0],true)
   // console.log(songs);
   let songUL = document
@@ -157,6 +160,12 @@ next.addEventListener("click",()=>{
   if((index + 1)<= songs.length-1){
     playMusic(songs[index+1])
   }  
+})
+
+document.querySelector(".volume").getElementsByTagName("input")[0].addEventListener("change",(e)=>{
+  console.log(e)
+  currentSong.volume=parseInt(e.target.value)/100
+  console.log(e.target.value)
 })
 
 

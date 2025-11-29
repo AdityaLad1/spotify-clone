@@ -61,7 +61,7 @@ nav {
   /* gap: 5px; */
   padding: 13px;
 }
-.close{
+.close {
   display: none;
 }
 /* section {
@@ -106,7 +106,7 @@ nav {
   width: 50px;
 }
 .rightFooter {
-  position:absolute;
+  position: absolute;
   bottom: 5px;
   /* margin-top: 22vh; */
   /* padding: 13px; */
@@ -119,7 +119,7 @@ div[aria-label="Legal and privacy links"] {
 
 /* Remove dots */
 div[aria-label="Legal and privacy links"] ul {
- list-style: none;
+  list-style: none;
   padding: 0;
   margin: 0;
 
@@ -182,11 +182,10 @@ div button svg {
 }
 
 .trendingGridCards {
-
- display: flex;
-    justify-content: flex-start;
-    gap: 10px;
-    flex-wrap: wrap;
+  display: flex;
+  justify-content: flex-start;
+  gap: 10px;
+  flex-wrap: wrap;
 }
 .trend {
   display: flex;
@@ -198,6 +197,12 @@ div button svg {
 
 .entireCard {
   position: relative;
+}
+
+.entireCard:hover{
+  background-color: #1f1f1f;
+  cursor: pointer;
+  transition: all 500ms;
 }
 .entireCard > img {
   position: absolute;
@@ -237,7 +242,7 @@ div button svg {
   bottom: 0px;
   width: 97%; */
   position: fixed;
-      bottom: 18px;
+  bottom: 18px;
   width: 75%;
   background-color: #1db954;
   padding: 10px;
@@ -279,6 +284,16 @@ div button svg {
   align-items: center;
 }
 
+.timevol {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.volume {
+  display: flex;
+  align-items: center;
+}
+
 @media (max-width: 1400px) {
   .rightNav {
     position: absolute;
@@ -287,12 +302,12 @@ div button svg {
     z-index: 1;
     width: 233px;
   }
-  .close{
+  .close {
     display: block;
     filter: invert(1);
   }
-  .rightFooter{
-display: none;
+  .rightFooter {
+    display: none;
   }
   .leftContainer {
     position: absolute;
@@ -309,17 +324,17 @@ display: none;
     width: 100vw;
   }
   .playbar {
-           width: 95.5%;
+    width: 95.5%;
   }
 }
-@media (max-height:700px){
-  .rightFooter{
+@media (max-height: 700px) {
+  .rightFooter {
     display: none;
   }
 }
 
-@media(max-width  :480px){
-  .cardTrending{
+@media (max-width: 480px) {
+  .cardTrending {
     width: 100%;
     justify-content: center;
   }
