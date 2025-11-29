@@ -25,43 +25,17 @@ const getSongs = async (folder) => {
   let div = document.createElement("div");
   div.innerHTML = response;
   let as = div.getElementsByTagName("a");
-  let songs = [];
+  songs = [];
   for (let i = 0; i < as.length; i++) {
     const element = as[i];
     if (element.href.endsWith(".mp3")) {
-      songs.push(element.href.split("%5Csongs%5C")[1].split("mcs%5C")[1]);
+      songs.push(element.href.split("%5Csongs%5C")[1].split("cs%5C")[1]);
     }
   }
-  return songs;
-};
-
-const playMusic = async (track,pause = false) => {
-  // var audio = new Audio("/songs/"+track);
-  // currentSong.src="/songs/"+track
-  currentSong.src=`/${currFolder}/`+track
-    // audio.play();
-    if(!pause){
-      currentSong.play()
-      // play.src="./images/playSong.svg"
-      play.src="./images/pause.svg"
-
-
-    }
-    document.querySelector(".songinfo").innerHTML=track.replaceAll("-", " ")
-      .replaceAll(".mp3", "")
-      .replaceAll("%20", " ")
-      .replaceAll("Copy", "");
-    document.querySelector(".songtime").innerHTML="00:00"
-
-}
-
-const main = async () => {
-  songs = await getSongs("songs/mcs");
-  playMusic(songs[0],true)
-  // console.log(songs);
-  let songUL = document
+   let songUL = document
     .querySelector(".songsList")
     .getElementsByTagName("ul")[0];
+    songUL.innerHTML=""
   for (const song of songs) {
     let cleanName = song
       .replaceAll("-", " ")
@@ -85,22 +59,40 @@ const main = async () => {
   </li>`;
 
   }
-  // Array.from(document.querySelector(".songsList").getElementsByTagName("li")).forEach(e  => {
-  //   // console.log(e.getElementsByTagName("div")[0])
-  //   e.addEventListener("click",element=>{
-
-  //     console.log(e.querySelector(".info").firstElementChild.innerHTML)
-  //     playMusic(e.querySelector(".info").firstElementChild.innerHTML.trim())
-  //   })
-    
-  // });
-  //   
+  
   Array.from(document.querySelectorAll(".songsList li")).forEach(li => {
   li.addEventListener("click", () => {
     let real = li.querySelector(".realname").innerText;
     playMusic(real);
   });
 });
+};
+
+const playMusic = async (track,pause = false) => {
+  // var audio = new Audio("/songs/"+track);
+  // currentSong.src="/songs/"+track
+  currentSong.src=`/${currFolder}/`+track
+    // audio.play();
+    if(!pause){
+      currentSong.play()
+      // play.src="./images/playSong.svg"
+      play.src="./images/pause.svg"
+
+
+    }
+    document.querySelector(".songinfo").innerHTML=track.replaceAll("-", " ")
+      .replaceAll(".mp3", "")
+      .replaceAll("%20", " ")
+      .replaceAll("Copy", "");
+    document.querySelector(".songtime").innerHTML="00:00"
+
+}
+
+const main = async () => {
+ await getSongs("songs/mcs");
+  playMusic(songs[0],true)
+  // console.log(songs);
+ 
 
 play.addEventListener("click",()=>{
   if(currentSong.paused)
@@ -166,6 +158,14 @@ document.querySelector(".volume").getElementsByTagName("input")[0].addEventListe
   console.log(e)
   currentSong.volume=parseInt(e.target.value)/100
   console.log(e.target.value)
+})
+
+Array.from(document.getElementsByClassName("entireCard")).forEach(e=>{
+  e.addEventListener("click",async (item ) => {
+    // console.log(await getSongs(`songs/${item.currentTarget.dataset.folder}`))
+    songs = await getSongs(`songs/${item.currentTarget.dataset.folder}`)
+    // item.currentTarget.dataset.folder
+  })
 })
 
 
